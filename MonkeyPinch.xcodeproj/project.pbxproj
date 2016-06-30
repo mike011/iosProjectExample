@@ -1,0 +1,438 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4CC1DF0F1CFD8D2E0082C7BE /* TickleGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC1DF0E1CFD8D2E0082C7BE /* TickleGestureRecognizer.swift */; };
+		4CEB5CA71CE1EFFF004AFA86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEB5CA61CE1EFFF004AFA86 /* AppDelegate.swift */; };
+		4CEB5CA91CE1EFFF004AFA86 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEB5CA81CE1EFFF004AFA86 /* ViewController.swift */; };
+		4CEB5CAC1CE1EFFF004AFA86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CEB5CAA1CE1EFFF004AFA86 /* Main.storyboard */; };
+		4CEB5CAE1CE1EFFF004AFA86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CEB5CAD1CE1EFFF004AFA86 /* Assets.xcassets */; };
+		4CEB5CB11CE1EFFF004AFA86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CEB5CAF1CE1EFFF004AFA86 /* LaunchScreen.storyboard */; };
+		4CEB5CBC1CE1F000004AFA86 /* MonkeyPinchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEB5CBB1CE1F000004AFA86 /* MonkeyPinchTests.swift */; };
+		4CEB5CCC1CE1F046004AFA86 /* banana.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEB5CC61CE1F046004AFA86 /* banana.png */; };
+		4CEB5CCD1CE1F046004AFA86 /* banana@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEB5CC71CE1F046004AFA86 /* banana@2x.png */; };
+		4CEB5CCE1CE1F046004AFA86 /* chomp.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4CEB5CC81CE1F046004AFA86 /* chomp.caf */; };
+		4CEB5CCF1CE1F046004AFA86 /* hehehe1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4CEB5CC91CE1F046004AFA86 /* hehehe1.caf */; };
+		4CEB5CD01CE1F046004AFA86 /* monkey.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEB5CCA1CE1F046004AFA86 /* monkey.png */; };
+		4CEB5CD11CE1F046004AFA86 /* monkey@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEB5CCB1CE1F046004AFA86 /* monkey@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4CEB5CB81CE1F000004AFA86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4CEB5C9B1CE1EFFF004AFA86 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4CEB5CA21CE1EFFF004AFA86;
+			remoteInfo = MonkeyPinch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4CC1DF0E1CFD8D2E0082C7BE /* TickleGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickleGestureRecognizer.swift; sourceTree = "<group>"; };
+		4CEB5CA31CE1EFFF004AFA86 /* MonkeyPinch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonkeyPinch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CEB5CA61CE1EFFF004AFA86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4CEB5CA81CE1EFFF004AFA86 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4CEB5CAB1CE1EFFF004AFA86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4CEB5CAD1CE1EFFF004AFA86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4CEB5CB01CE1EFFF004AFA86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4CEB5CB21CE1EFFF004AFA86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CEB5CB71CE1F000004AFA86 /* MonkeyPinchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonkeyPinchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CEB5CBB1CE1F000004AFA86 /* MonkeyPinchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonkeyPinchTests.swift; sourceTree = "<group>"; };
+		4CEB5CBD1CE1F000004AFA86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CEB5CC61CE1F046004AFA86 /* banana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = banana.png; sourceTree = "<group>"; };
+		4CEB5CC71CE1F046004AFA86 /* banana@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "banana@2x.png"; sourceTree = "<group>"; };
+		4CEB5CC81CE1F046004AFA86 /* chomp.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = chomp.caf; sourceTree = "<group>"; };
+		4CEB5CC91CE1F046004AFA86 /* hehehe1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = hehehe1.caf; sourceTree = "<group>"; };
+		4CEB5CCA1CE1F046004AFA86 /* monkey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monkey.png; sourceTree = "<group>"; };
+		4CEB5CCB1CE1F046004AFA86 /* monkey@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monkey@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4CEB5CA01CE1EFFF004AFA86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CEB5CB41CE1F000004AFA86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4CEB5C9A1CE1EFFF004AFA86 = {
+			isa = PBXGroup;
+			children = (
+				4CEB5CA51CE1EFFF004AFA86 /* MonkeyPinch */,
+				4CEB5CBA1CE1F000004AFA86 /* MonkeyPinchTests */,
+				4CEB5CA41CE1EFFF004AFA86 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4CEB5CA41CE1EFFF004AFA86 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4CEB5CA31CE1EFFF004AFA86 /* MonkeyPinch.app */,
+				4CEB5CB71CE1F000004AFA86 /* MonkeyPinchTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4CEB5CA51CE1EFFF004AFA86 /* MonkeyPinch */ = {
+			isa = PBXGroup;
+			children = (
+				4CEB5CA61CE1EFFF004AFA86 /* AppDelegate.swift */,
+				4CEB5CA81CE1EFFF004AFA86 /* ViewController.swift */,
+				4CC1DF0E1CFD8D2E0082C7BE /* TickleGestureRecognizer.swift */,
+				4CEB5CAA1CE1EFFF004AFA86 /* Main.storyboard */,
+				4CEB5CC61CE1F046004AFA86 /* banana.png */,
+				4CEB5CC71CE1F046004AFA86 /* banana@2x.png */,
+				4CEB5CC81CE1F046004AFA86 /* chomp.caf */,
+				4CEB5CC91CE1F046004AFA86 /* hehehe1.caf */,
+				4CEB5CCB1CE1F046004AFA86 /* monkey@2x.png */,
+				4CEB5CCA1CE1F046004AFA86 /* monkey.png */,
+				4CEB5CAD1CE1EFFF004AFA86 /* Assets.xcassets */,
+				4CEB5CAF1CE1EFFF004AFA86 /* LaunchScreen.storyboard */,
+				4CEB5CB21CE1EFFF004AFA86 /* Info.plist */,
+			);
+			path = MonkeyPinch;
+			sourceTree = "<group>";
+		};
+		4CEB5CBA1CE1F000004AFA86 /* MonkeyPinchTests */ = {
+			isa = PBXGroup;
+			children = (
+				4CEB5CBB1CE1F000004AFA86 /* MonkeyPinchTests.swift */,
+				4CEB5CBD1CE1F000004AFA86 /* Info.plist */,
+			);
+			path = MonkeyPinchTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4CEB5CA21CE1EFFF004AFA86 /* MonkeyPinch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CEB5CC01CE1F000004AFA86 /* Build configuration list for PBXNativeTarget "MonkeyPinch" */;
+			buildPhases = (
+				4CEB5C9F1CE1EFFF004AFA86 /* Sources */,
+				4CEB5CA01CE1EFFF004AFA86 /* Frameworks */,
+				4CEB5CA11CE1EFFF004AFA86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MonkeyPinch;
+			productName = MonkeyPinch;
+			productReference = 4CEB5CA31CE1EFFF004AFA86 /* MonkeyPinch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4CEB5CB61CE1F000004AFA86 /* MonkeyPinchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CEB5CC31CE1F000004AFA86 /* Build configuration list for PBXNativeTarget "MonkeyPinchTests" */;
+			buildPhases = (
+				4CEB5CB31CE1F000004AFA86 /* Sources */,
+				4CEB5CB41CE1F000004AFA86 /* Frameworks */,
+				4CEB5CB51CE1F000004AFA86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4CEB5CB91CE1F000004AFA86 /* PBXTargetDependency */,
+			);
+			name = MonkeyPinchTests;
+			productName = MonkeyPinchTests;
+			productReference = 4CEB5CB71CE1F000004AFA86 /* MonkeyPinchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4CEB5C9B1CE1EFFF004AFA86 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Bloc;
+				TargetAttributes = {
+					4CEB5CA21CE1EFFF004AFA86 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = EBEBFJ4KC4;
+					};
+					4CEB5CB61CE1F000004AFA86 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = EBEBFJ4KC4;
+						TestTargetID = 4CEB5CA21CE1EFFF004AFA86;
+					};
+				};
+			};
+			buildConfigurationList = 4CEB5C9E1CE1EFFF004AFA86 /* Build configuration list for PBXProject "MonkeyPinch" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4CEB5C9A1CE1EFFF004AFA86;
+			productRefGroup = 4CEB5CA41CE1EFFF004AFA86 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4CEB5CA21CE1EFFF004AFA86 /* MonkeyPinch */,
+				4CEB5CB61CE1F000004AFA86 /* MonkeyPinchTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4CEB5CA11CE1EFFF004AFA86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CEB5CD01CE1F046004AFA86 /* monkey.png in Resources */,
+				4CEB5CCE1CE1F046004AFA86 /* chomp.caf in Resources */,
+				4CEB5CB11CE1EFFF004AFA86 /* LaunchScreen.storyboard in Resources */,
+				4CEB5CAE1CE1EFFF004AFA86 /* Assets.xcassets in Resources */,
+				4CEB5CD11CE1F046004AFA86 /* monkey@2x.png in Resources */,
+				4CEB5CCD1CE1F046004AFA86 /* banana@2x.png in Resources */,
+				4CEB5CCC1CE1F046004AFA86 /* banana.png in Resources */,
+				4CEB5CAC1CE1EFFF004AFA86 /* Main.storyboard in Resources */,
+				4CEB5CCF1CE1F046004AFA86 /* hehehe1.caf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CEB5CB51CE1F000004AFA86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4CEB5C9F1CE1EFFF004AFA86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CEB5CA91CE1EFFF004AFA86 /* ViewController.swift in Sources */,
+				4CC1DF0F1CFD8D2E0082C7BE /* TickleGestureRecognizer.swift in Sources */,
+				4CEB5CA71CE1EFFF004AFA86 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CEB5CB31CE1F000004AFA86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CEB5CBC1CE1F000004AFA86 /* MonkeyPinchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4CEB5CB91CE1F000004AFA86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4CEB5CA21CE1EFFF004AFA86 /* MonkeyPinch */;
+			targetProxy = 4CEB5CB81CE1F000004AFA86 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4CEB5CAA1CE1EFFF004AFA86 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CEB5CAB1CE1EFFF004AFA86 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4CEB5CAF1CE1EFFF004AFA86 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CEB5CB01CE1EFFF004AFA86 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4CEB5CBE1CE1F000004AFA86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4CEB5CBF1CE1F000004AFA86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4CEB5CC11CE1F000004AFA86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = MonkeyPinch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Bloc.io.MonkeyPinch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4CEB5CC21CE1F000004AFA86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = MonkeyPinch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Bloc.io.MonkeyPinch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4CEB5CC41CE1F000004AFA86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MonkeyPinchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Bloc.io.MonkeyPinchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MonkeyPinch.app/MonkeyPinch";
+			};
+			name = Debug;
+		};
+		4CEB5CC51CE1F000004AFA86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MonkeyPinchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Bloc.io.MonkeyPinchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MonkeyPinch.app/MonkeyPinch";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4CEB5C9E1CE1EFFF004AFA86 /* Build configuration list for PBXProject "MonkeyPinch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CEB5CBE1CE1F000004AFA86 /* Debug */,
+				4CEB5CBF1CE1F000004AFA86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CEB5CC01CE1F000004AFA86 /* Build configuration list for PBXNativeTarget "MonkeyPinch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CEB5CC11CE1F000004AFA86 /* Debug */,
+				4CEB5CC21CE1F000004AFA86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CEB5CC31CE1F000004AFA86 /* Build configuration list for PBXNativeTarget "MonkeyPinchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CEB5CC41CE1F000004AFA86 /* Debug */,
+				4CEB5CC51CE1F000004AFA86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4CEB5C9B1CE1EFFF004AFA86 /* Project object */;
+}
