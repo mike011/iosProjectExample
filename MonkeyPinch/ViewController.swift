@@ -18,8 +18,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     var hehePlayer:AVAudioPlayer? = nil
     
     func loadSound(filename:NSString) -> AVAudioPlayer {
-        let url = NSBundle.mainBundle().URLForResource(filename as String, withExtension: "caf")
-        let player = try? AVAudioPlayer(contentsOfURL: url!, fileTypeHint: "caf")
+        let url = Bundle.main.url(forResource: filename as String, withExtension: "caf")
+        let player = try? AVAudioPlayer(contentsOf: url!, fileTypeHint: "caf")
         if player == nil {
             print("Error loading \(url)")
         } else {
@@ -31,22 +31,22 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let filteredSubviews = self.view.subviews.filter({$0.isKindOfClass(UIImageView)})
+        let filteredSubviews = self.view.subviews
         for view in filteredSubviews {
             let recognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap))
             recognizer.delegate = self
             view.addGestureRecognizer(recognizer)
             
-            recognizer.requireGestureRecognizerToFail(monkeyPan)
-            recognizer.requireGestureRecognizerToFail(bananaPan)
+            recognizer.require(toFail: monkeyPan)
+            recognizer.require(toFail: bananaPan)
             
             let recognizer2 = TickleGestureRecognizer(target: self, action: #selector(handleTickle))
             recognizer2.delegate = self
             view.addGestureRecognizer(recognizer2)
             
         }
-        self.chompPlayer = self.loadSound("chomp")
-        self.hehePlayer = self.loadSound("hehehe1")
+        self.chompPlayer = self.loadSound(filename: "chomp")
+        self.hehePlayer = self.loadSound(filename: "hehehe1")
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,15 +60,15 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         // uncomment for tickling
         return;
         
-        let translation = recognizer.translationInView(self.view)
+        let translation = recognizer.translation(in: self.view)
         if let view = recognizer.view {
             view.center = CGPoint(x:view.center.x + translation.x, y:view.center.y + translation.y)
         }
-        recognizer.setTranslation(CGPointZero, inView: self.view)
+        recognizer.setTranslation(CGPoint(x: 0,y :0), in: self.view)
         
-        if recognizer.state == UIGestureRecognizerState.Ended {
+        if recognizer.state == UIGestureRecognizerState.ended {
             
-            let velocity = recognizer.velocityInView(self.view)
+            let velocity = recognizer.velocity(in: self.view)
             let magnitude = sqrt((velocity.x * velocity.x) + (velocity.y * velocity.y))
             let slideMultiplier = magnitude / 200
             print("magnitude: \(magnitude), slideMultiplier: \(slideMultiplier)")
@@ -79,21 +79,23 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             finalPoint.x = min(max(finalPoint.x, 0), self.view.bounds.size.width)
             finalPoint.y = min(max(finalPoint.y, 0), self.view.bounds.size.height)
             
-            UIView.animateWithDuration(Double(slideFactor * 2), delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: {recognizer.view!.center = finalPoint }, completion: nil)
+            UIView.animate(withDuration: Double(slideFactor * 2), delay: 0, options: UIViewAnimationOptions.curveEaseOut, animations: {recognizer.view!.center = finalPoint }, completion: nil)
             
         }
     }
     
     @IBAction func handlePinch(recognizer: UIPinchGestureRecognizer) {
         if let view = recognizer.view {
-            view.transform = CGAffineTransformScale(view.transform, recognizer.scale, recognizer.scale)
+            //view.transform = CGAffineTransformScale(view.transform, recognizer.scale, recognizer.scale)
+            view.transform = view.transform.scaledBy(x: 0, y: 0)
             recognizer.scale = 1
         }
     }
     
     @IBAction func handleRotate(recognizer: UIRotationGestureRecognizer) {
         if let view = recognizer.view {
-            view.transform = CGAffineTransformRotate(view.transform, recognizer.rotation)
+            //view.transform = CGAffineTransformRotate(view.transform, recognizer.rotation)
+             view.transform = view.transform.scaledBy(x: 0, y: 0)
             recognizer.rotation = 0
         }
         

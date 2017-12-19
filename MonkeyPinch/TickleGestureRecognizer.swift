@@ -21,18 +21,18 @@ class TickleGestureRecognizer:UITapGestureRecognizer {
     }
     
     var tickleCount:Int = 0
-    var curTickleStart:CGPoint = CGPointZero
+    var curTickleStart:CGPoint = CGPoint(x: 0, y: 0)
     var lastDirection:Direction = .DirectionUnknown
 
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent) {
         if let touch = touches.first {
-            self.curTickleStart = touch.locationInView(self.view)
+            self.curTickleStart = touch.location(in: self.view)
         }
     }
     
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent) {
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent) {
         if let touch = touches.first {
-            let ticklePoint = touch.locationInView(self.view)
+            let ticklePoint = touch.location(in: self.view)
             
             let moveAmt = ticklePoint.x - curTickleStart.x
             var curDirection:Direction
@@ -55,8 +55,8 @@ class TickleGestureRecognizer:UITapGestureRecognizer {
                 self.curTickleStart = ticklePoint
                 self.lastDirection = curDirection
             
-                if self.state == .Possible && self.tickleCount > self.requiredTickles {
-                    self.state = .Ended
+                if self.state == .possible && self.tickleCount > self.requiredTickles {
+                    self.state = .ended
                 }
             }
         }
@@ -64,18 +64,18 @@ class TickleGestureRecognizer:UITapGestureRecognizer {
     
     override func reset() {
         self.tickleCount = 0
-        self.curTickleStart = CGPointZero
+        self.curTickleStart = CGPoint(x: 0,y :0)
         self.lastDirection = .DirectionUnknown
-        if self.state == .Possible {
-            self.state = .Failed
+        if self.state == .possible {
+            self.state = .failed
         }
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent) {
         self.reset()
     }
     
-    override func touchesCancelled(touches: Set<UITouch>, withEvent event: UIEvent) {
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent) {
         self.reset()
     }
 }
