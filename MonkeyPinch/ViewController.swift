@@ -105,11 +105,11 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         return true
     }
     
-    func handleTap(recognizer: UITapGestureRecognizer) {
+    @objc func handleTap(recognizer: UITapGestureRecognizer) {
         self.chompPlayer?.play()
     }
     
-    func handleTickle(recognizer: TickleGestureRecognizer) {
+    @objc func handleTickle(recognizer: TickleGestureRecognizer) {
         self.hehePlayer?.play()
     }
 
