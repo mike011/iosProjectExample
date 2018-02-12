@@ -24,7 +24,9 @@ platform :ios do
 
   desc "Runs all the tests"
   lane :test do
-    run_tests
+    scan(code_coverage: true, output_directory: "./fastlane/test_output/")
+    sh 'slather coverage --scheme MonkeyPinch --cobertura-xml --output-directory ./test_output/ ../MonkeyPinch.xcodeproj'
+    sh 'java -cp codacy-coverage-reporter-2.0.2-assembly.jar com.codacy.CodacyCoverageReporter -l Swift -r ./test_output/cobertura.xml'
   end
 
   desc "Submit a new Beta Build to Apple TestFlight"
