@@ -1,2 +1,4 @@
 fastlane/test_output/
 fastlane/report.xml
+
+*.DS_Store
