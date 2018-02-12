@@ -23,8 +23,9 @@ class MonkeyPinchTests: XCTestCase {
     
     func testExample() {
         let tgr = TickleGestureRecognizer()
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let touches = Set<UITouch>()
+        let event = UIEvent()
+        tgr.touchesMoved(touches, with: event)
     }
     
     func testPerformanceExample() {
