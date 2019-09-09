@@ -3,3 +3,4 @@ Tutorial about UIGestureRecognizer from https://www.raywenderlich.com/162745/uig
 
 Also contains an example of using Fastlane to build and run tests, create coverage reports in a cobertura style and upload those to Codacy.
 
+Now with an example of how to merge code from a release branch.
