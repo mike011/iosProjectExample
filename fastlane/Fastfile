@@ -73,6 +73,21 @@ platform :ios do
     # frame_screenshots
   end
 
+  desc "Merge the daily build"
+  lane :daily_testflight_build_merge do
+
+    branch_name = get_app_version
+
+    # Step 1: From your project repository, bring in the changes and test.
+    sh "git merge develop"
+
+    #Step 2: Merge the changes and update on GitHub.
+    sh "git checkout develop"
+    sh "git merge --no-ff release/" + branch_name
+    sh "git push origin develop --force"
+  end
+
+
   # You can define as many lanes as you want
 
   after_all do |lane|
