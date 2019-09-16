@@ -28,11 +28,9 @@ class MonkeyPinchTests: XCTestCase {
         tgr.touchesMoved(touches, with: event)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testCoverage() {
+        let vc = ViewController()
+        vc.viewDidLoad()
     }
     
 }

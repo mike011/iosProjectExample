@@ -48,7 +48,7 @@ platform :ios do
         scheme: "MonkeyPinch",
         proj: "MonkeyPinch.xcodeproj",
         output_directory: "fastlane/test_output/",
-        html: true
+        cobertura_xml: true
       )
     end
   end
