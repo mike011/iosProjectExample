@@ -2,3 +2,4 @@ fastlane/test_output/
 fastlane/report.xml
 
 *.DS_Store
+MonkeyPinch.xcodeproj/project.xcworkspace/xcuserdata/
