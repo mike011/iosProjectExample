@@ -21,7 +21,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         let url = Bundle.main.url(forResource: filename as String, withExtension: "caf")
         let player = try? AVAudioPlayer(contentsOf: url!, fileTypeHint: "caf")
         if player == nil {
-            print("Error loading \(url)")
+            print("Error loading \(String(describing: url))")
         } else {
             player?.prepareToPlay()
         }
@@ -66,7 +66,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         }
         recognizer.setTranslation(CGPoint(x: 0,y :0), in: self.view)
         
-        if recognizer.state == UIGestureRecognizerState.ended {
+        if recognizer.state == UIGestureRecognizer.State.ended {
             
             let velocity = recognizer.velocity(in: self.view)
             let magnitude = sqrt((velocity.x * velocity.x) + (velocity.y * velocity.y))
@@ -79,7 +79,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             finalPoint.x = min(max(finalPoint.x, 0), self.view.bounds.size.width)
             finalPoint.y = min(max(finalPoint.y, 0), self.view.bounds.size.height)
             
-            UIView.animate(withDuration: Double(slideFactor * 2), delay: 0, options: UIViewAnimationOptions.curveEaseOut, animations: {recognizer.view!.center = finalPoint }, completion: nil)
+            UIView.animate(withDuration: Double(slideFactor * 2), delay: 0, options: UIView.AnimationOptions.curveEaseOut, animations: {recognizer.view!.center = finalPoint }, completion: nil)
             
         }
     }
@@ -101,11 +101,11 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         
     }
 
-    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
     
-    @objc func handleTap(recognizer: UITapGestureRecognizer) {
+    @IBAction func handleTap(_ sender: Any) {
         self.chompPlayer?.play()
     }
     
