@@ -26,9 +26,19 @@ platform :ios do
   lane :test do |options|
     sh "rm -rf test_output"
     sh "mkdir test_output"
-    scan(code_coverage: true,
+    multi_scan(code_coverage: true,
       output_directory: "./fastlane/test_output/",
+      try_count: 3,
       result_bundle: true)
+
+    options = Hash.new
+    options[:scheme] = "MonkeyPinchTests"
+    generateTestReport(options)
+  end
+
+  lane :generateTestReport do |options|
+    puts "Generate a test report using XCTestHTMLReport"
+    sh "./xchtmlreport -j -r ./test_output/" + options[:scheme] + "-batch-1/report.xcresult"
   end
 
   private_lane :code_coverage do |options|

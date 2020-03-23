@@ -27,6 +27,11 @@ class MonkeyPinchTests: XCTestCase {
         tgr.touchesMoved(touches, with: event)
     }
 
+    func testRandomFailure() {
+        let number = Int.random(in: 0 ... 1)
+        XCTAssertEqual(number, 0)
+       }
+
     func testPerformanceExample() {
         // This is an example of a performance test case.
         measure {
