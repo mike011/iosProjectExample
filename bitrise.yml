@@ -30,3 +30,7 @@ workflows:
         - lane: $FASTLANE_LANE
         - work_dir: $FASTLANE_WORK_DIR
     - deploy-to-bitrise-io@1: {}
+    - comment-on-github-pull-request@0:
+        inputs:
+        - personal_access_token: $GIT_HUB_KEY
+        - body: Testy Mc Test Test
