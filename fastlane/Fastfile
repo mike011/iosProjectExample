@@ -53,6 +53,16 @@ platform :ios do
     end
   end
 
+  desc "Lint all the things."
+  lane :lint do
+    swiftLint(
+      mode: :lint,
+      reporter: "junit",
+      ignore_exit_status: true,
+      output_file: "fastlane/test_output" + "/swiftlint." + "junit"
+    )
+  end
+
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do

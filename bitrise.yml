@@ -12,8 +12,6 @@ app:
       is_expand: false
     FASTLANE_LANE: ios test
 trigger_map:
-- push_branch: '*'
-  workflow: primary
 - pull_request_source_branch: '*'
   workflow: primary
 workflows:
@@ -23,15 +21,53 @@ workflows:
         run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
     - git-clone@4: {}
     - script@1:
-        title: Do anything with Script step
+        title: swiftLint
     - certificate-and-profile-installer@1: {}
     - fastlane@2:
         inputs:
         - lane: $FASTLANE_LANE
         - work_dir: $FASTLANE_WORK_DIR
-    - deploy-to-bitrise-io@1: {}
+    - script@1:
+        inputs:
+        - content: |-
+            #!/usr/bin/env bash
+            # fail if any commands fails
+            set -e
+            # debug log
+            set -x
+            brew install swiftlint
+    - fastlane:
+        inputs:
+        - update_fastlane: 'false'
+        - lane: lint --verbose
+    - script@1:
+        inputs:
+        - content: |-
+            #!/bin/env bash
+            set -ex
+
+            # Creating the sub-directory for the test run within the BITRISE_TEST_RESULT_DIR:
+            test_run_dir="$BITRISE_TEST_RESULT_DIR/unitTests"
+            mkdir "$test_run_dir"
+
+            # Exporting the JUnit XML test report:
+            cp "fastlane/test_output/report.junit" "$test_run_dir/UnitTest.xml"
+
+            # Creating the test-info.json file with the name of the test run defined:
+            echo '{"test-name":"Unit Tests"}' >> "$test_run_dir/test-info.json"
+
+            # Creating the sub-directory for the test run within the BITRISE_TEST_RESULT_DIR:
+            swiftlint_run_dir="$BITRISE_TEST_RESULT_DIR/swiftlint"
+            mkdir "$swiftlint_run_dir"
+
+            # Exporting the JUnit XML swiflint report:
+            cp "fastlane/test_output/swiftlint.junit" "$swiftlint_run_dir/UnitTest.xml"
+
+            # Creating the test-info.json file with the name of the test run defined:
+            echo '{"test-name":"Swiftlint"}' >> "$swiftlint_run_dir/test-info.json"
     - comment-on-github-pull-request@0:
-        run_if: .IsPR
+        run_if: ".IsPR"
         inputs:
         - personal_access_token: $GIT_HUB_KEY
         - body: Testy Mc Test Test
+    - deploy-to-bitrise-io@1: {}
