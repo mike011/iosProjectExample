@@ -28,32 +28,41 @@ platform :ios do
 
   desc "Runs all the tests"
   lane :test do |options|
-    scan(code_coverage: true, output_directory: "fastlane/test_output/")
-    create_report_for_ci("UnitTests", "report.junit")
+    success = true
+    begin
+      scan(code_coverage: true, output_directory: "fastlane/test_output/")
+    rescue => exception
+      success = false
+    ensure
+      create_report_for_ci("UnitTests", "report.junit")
+    end
 
-    if options.has_key?(:CODACY_PROJECT_TOKEN)
-      slather(
-        scheme: "MonkeyPinch",
-        proj: "MonkeyPinch.xcodeproj",
-        output_directory: "fastlane/test_output/",
-        cobertura_xml: true
-      )
-      code_coverage_command = [
-        "java -cp codacy-coverage-reporter-2.0.2-assembly.jar",
-        "com.codacy.CodacyCoverageReporter",
-        "--language Swift", "--forceLanguage",
-        "--coverageReport ./test_output/cobertura.xml",
-        "--commitUUID " + last_git_commit[:commit_hash],
-        "--projectToken " + options[:CODACY_PROJECT_TOKEN]
-      ]
-      sh code_coverage_command.join(" ")
-    else
-      slather(
-        scheme: "MonkeyPinch",
-        proj: "MonkeyPinch.xcodeproj",
-        output_directory: "fastlane/test_output/",
-        cobertura_xml: true
-      )
+    if success
+
+      if options.has_key?(:CODACY_PROJECT_TOKEN)
+        slather(
+          scheme: "MonkeyPinch",
+          proj: "MonkeyPinch.xcodeproj",
+          output_directory: "fastlane/test_output/",
+          cobertura_xml: true
+        )
+        code_coverage_command = [
+          "java -cp codacy-coverage-reporter-2.0.2-assembly.jar",
+          "com.codacy.CodacyCoverageReporter",
+          "--language Swift", "--forceLanguage",
+          "--coverageReport ./test_output/cobertura.xml",
+          "--commitUUID " + last_git_commit[:commit_hash],
+          "--projectToken " + options[:CODACY_PROJECT_TOKEN]
+        ]
+        sh code_coverage_command.join(" ")
+      else
+        slather(
+          scheme: "MonkeyPinch",
+          proj: "MonkeyPinch.xcodeproj",
+          output_directory: "fastlane/test_output/",
+          cobertura_xml: true
+        )
+      end
     end
   end
 
