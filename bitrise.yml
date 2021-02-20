@@ -40,31 +40,6 @@ workflows:
         inputs:
         - update_fastlane: 'false'
         - lane: lint --verbose
-    - script@1:
-        inputs:
-        - content: |-
-            #!/bin/env bash
-            set -ex
-
-            # Creating the sub-directory for the test run within the BITRISE_TEST_RESULT_DIR:
-            test_run_dir="$BITRISE_TEST_RESULT_DIR/unitTests"
-            mkdir "$test_run_dir"
-
-            # Exporting the JUnit XML test report:
-            cp "fastlane/test_output/report.junit" "$test_run_dir/UnitTest.xml"
-
-            # Creating the test-info.json file with the name of the test run defined:
-            echo '{"test-name":"Unit Tests"}' >> "$test_run_dir/test-info.json"
-
-            # Creating the sub-directory for the test run within the BITRISE_TEST_RESULT_DIR:
-            swiftlint_run_dir="$BITRISE_TEST_RESULT_DIR/swiftlint"
-            mkdir "$swiftlint_run_dir"
-
-            # Exporting the JUnit XML swiflint report:
-            cp "fastlane/test_output/swiftlint.junit" "$swiftlint_run_dir/UnitTest.xml"
-
-            # Creating the test-info.json file with the name of the test run defined:
-            echo '{"test-name":"Swiftlint"}' >> "$swiftlint_run_dir/test-info.json"
     - comment-on-github-pull-request@0:
         run_if: ".IsPR"
         inputs:

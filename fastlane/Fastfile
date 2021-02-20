@@ -5,6 +5,7 @@
 
 # Change the syntax highlighting to Ruby
 # All lines starting with a # are ignored when running `fastlane`
+require 'fileutils'
 
 # If you want to automatically update fastlane if a new version is available:
 # update_fastlane
@@ -17,6 +18,9 @@ default_platform(:ios)
 
 platform :ios do
   before_all do
+    test_output_dir = 'test_output'
+    FileUtils.rm_rf(test_output_dir)
+    Dir.mkdir(test_output_dir)
     # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
     # cocoapods
     # cocoapods
@@ -24,8 +28,8 @@ platform :ios do
 
   desc "Runs all the tests"
   lane :test do |options|
-    sh "rm -rf test_output"
     scan(code_coverage: true, output_directory: "fastlane/test_output/")
+    create_report_for_ci("UnitTests", "report.junit")
 
     if options.has_key?(:CODACY_PROJECT_TOKEN)
       slather(
@@ -61,6 +65,25 @@ platform :ios do
       ignore_exit_status: true,
       output_file: "fastlane/test_output" + "/swiftlint." + "junit"
     )
+    create_report_for_ci("swiftlint", "swiftlint.junit")
+  end
+
+  def create_report_for_ci(name, filename)
+
+    # Only run this report on the CI.
+    return if !is_ci
+
+    # Creating the sub-directory for the test run within the BITRISE_TEST_RESULT_DIR:
+    test_run_dir = ENV["BITRISE_TEST_RESULT_DIR"] + "/" + name
+    Dir.mkdir(test_run_dir) unless Dir.exists?(test_run_dir)
+
+    # Exporting the JUnit XML test report:
+    FileUtils.cp('test_output/' + filename, test_run_dir + '/UnitTest.xml')
+
+    # Creating the test-info.json file with the name of the test run defined:
+    json = File.open(test_run_dir + '/test-info.json','w')
+    json.write('{"test-name":"' + name + '"}');
+    json.close
   end
 
   desc "Submit a new Beta Build to Apple TestFlight"
