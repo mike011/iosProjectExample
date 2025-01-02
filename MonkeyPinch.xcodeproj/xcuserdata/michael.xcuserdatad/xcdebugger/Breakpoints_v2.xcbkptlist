@@ -86,6 +86,36 @@
             endingLineNumber = "88"
             landmarkName = "handlePinch(recognizer:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3BBAF79E-736B-4D27-847F-4C3DCD367D93 - 852645f7367ed70d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MonkeyPinch.ViewController.handlePinch(recognizer: __C.UIPinchGestureRecognizer) -&gt; ()"
+                  moduleName = "MonkeyPinch.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michael/Documents/git/iosProjectExample/MonkeyPinch/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88">
+               </Location>
+               <Location
+                  uuid = "3BBAF79E-736B-4D27-847F-4C3DCD367D93 - 852645f7367ed70d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MonkeyPinch.ViewController.handlePinch(recognizer: __C.UIPinchGestureRecognizer) -&gt; ()"
+                  moduleName = "MonkeyPinch.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michael/Documents/git/iosProjectExample/MonkeyPinch/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -102,6 +132,36 @@
             endingLineNumber = "96"
             landmarkName = "handleRotate(recognizer:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "53B91804-4968-4818-AB0B-A11973698648 - e6f2851b4c0c9164"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MonkeyPinch.ViewController.handleRotate(recognizer: __C.UIRotationGestureRecognizer) -&gt; ()"
+                  moduleName = "MonkeyPinch.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michael/Documents/git/iosProjectExample/MonkeyPinch/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96">
+               </Location>
+               <Location
+                  uuid = "53B91804-4968-4818-AB0B-A11973698648 - e6f2851b4c0c9164"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MonkeyPinch.ViewController.handleRotate(recognizer: __C.UIRotationGestureRecognizer) -&gt; ()"
+                  moduleName = "MonkeyPinch.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michael/Documents/git/iosProjectExample/MonkeyPinch/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

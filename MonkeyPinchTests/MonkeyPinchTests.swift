@@ -6,31 +6,22 @@
 //  Copyright © 2016 Bloc. All rights reserved.
 //
 
-import XCTest
 @testable import MonkeyPinch
+import Testing
+import UIKit
 
-class MonkeyPinchTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        let tgr = TickleGestureRecognizer()
+struct MonkeyPinchTests {
+
+    @Test func example() async {
+        let tgr = await TickleGestureRecognizer()
         let touches = Set<UITouch>()
-        let event = UIEvent()
-        tgr.touchesMoved(touches, with: event)
+        let event = await UIEvent()
+        await tgr.touchesMoved(touches, with: event)
     }
     
-    func testCoverage() {
-        let vc = ViewController()
-        vc.viewDidLoad()
+    @Test func coverage() async {
+        let vc = await ViewController()
+        await vc.viewDidLoad()
     }
     
 }
